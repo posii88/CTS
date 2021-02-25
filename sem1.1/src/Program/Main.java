@@ -1,6 +1,7 @@
 package Program;
 
 import clase.Girafa;
+import clase.Zebra;
 import clase.Zoo;
 
 public class Main {
