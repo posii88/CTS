@@ -9,9 +9,11 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Elev;
 
-public class ElevReader {
-	public static List<Aplicant> readPupil(String file) throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+public class ElevReader extends AplicantReader {
+
+
+	public List<Aplicant> readAplicanti(String file) throws FileNotFoundException {
+		Scanner input2 = new Scanner(new File(super.fileName));
 		input2.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 
@@ -33,4 +35,14 @@ public class ElevReader {
 		input2.close();
 		return elevi;
 	}
+	public ElevReader(String fileName) {
+		super(fileName);
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public List<Aplicant> readAplicanti() throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

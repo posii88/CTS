@@ -1,5 +1,6 @@
 package ro.ase.cts.reader;
 
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -9,11 +10,17 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
 
-public class AngajatReader {
-	public static List<Aplicant> readAngajati(String file) throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+public class AngajatReader extends AplicantReader {
+	
+//	Am facut aceste clase ca sa respecte Single Responsability
+	
+//	nu folosim ArrayList, folosim List - principiul Dependency Inversion Principle .....
+	
+	
+	public List<Aplicant> readAplicanti() throws FileNotFoundException {
+		Scanner input2 = new Scanner(new File(super.fileName));
 		input2.useDelimiter(",");
-		List<Aplicant> aplicant = new ArrayList<Aplicant>();
+		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
 		while (input2.hasNext()) {
 			String nume = input2.next();
@@ -27,9 +34,15 @@ public class AngajatReader {
 			int salariu = input2.nextInt();
 			String ocupatie = input2.next();
 			Angajat a = new Angajat(nume, prenume, varsta, punctaj, nr, vect, salariu, ocupatie);
-			aplicant.add(a);
+			angajati.add(a);
 		}
 		input2.close();
-		return aplicant;
+		return angajati;
 	}
+
+	public AngajatReader(String fileName) {
+		super(fileName);
+		// TODO Auto-generated constructor stub
+	}
+
 }
