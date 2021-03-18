@@ -1,0 +1,2 @@
+module semin3 {
+}
