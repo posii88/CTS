@@ -34,11 +34,11 @@ public class ElevReader extends AplicantReader {
 	}
 	public ElevReader(String fileName) {
 		super(fileName);
-		// TODO Auto-generated constructor stub
+		
 	}
 	@Override
 	public List<Aplicant> readAplicanti() throws FileNotFoundException {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

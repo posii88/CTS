@@ -9,9 +9,6 @@ import ro.ase.cts.clase.Aplicant;
 public abstract class AplicantReader {
 	protected String fileName;
 	
-	
-	
-	
 	public AplicantReader(String fileName) {
 		super();
 		this.fileName = fileName;
@@ -25,15 +22,15 @@ public abstract class AplicantReader {
 		int varsta = scanner.nextInt();
 		int punctaj = scanner.nextInt();
 		int nr = scanner.nextInt();
-		String[] vect = new String[nr];
+		String[] denumiriProiecte  = new String[nr];
 		for (int i = 0; i < nr; i++)
-			vect[i] = scanner.next();
+			denumiriProiecte[i] = scanner.next();
 		
 		aplicant.setNume(nume);
 		aplicant.setPrenume(prenume);
 		aplicant.setVarsta(varsta);
 		aplicant.setPunctaj(punctaj);
-		aplicant.setDenumiri(nr,vect);
+		aplicant.setDenumiri(nr,denumiriProiecte);
 		return aplicant;
 		
 	}

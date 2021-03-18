@@ -22,7 +22,7 @@ Student s=new Student();
 super.readAplicant(input, s);
 			int an_studii = input.nextInt();
 			String facultate = (input.next()).toString();
-			s.setAn_studii(an_studii);
+			s.setAnStudii(an_studii);
 			s.setFacultate(facultate);
 		
 			studenti.add(s);
@@ -32,7 +32,7 @@ super.readAplicant(input, s);
 	}
 	public StudentReader(String fileName) {
 		super(fileName);
-		// TODO Auto-generated constructor stub
+
 	}
 
 }
