@@ -64,11 +64,76 @@ public class StudentTests {
 	}
 	
 	@Test
-	public void DimensiuneLista() {
+	public void testDimensiuneLista() {
 		Student student=new Student();
 		int nota=10;
 		student.adaugaNota(nota);
 		assertEquals(1, student.getNote().size());
+	}
+	
+	@Test
+	public void testCalculeazaMedie() {
+		Student student=new Student();
+		int note1=10;
+		int note2=3;
+		int note3=7;
+		int note4=8;
+		student.adaugaNota(note1);
+		student.adaugaNota(note2);
+		student.adaugaNota(note3);
+		float medie=(note1+note2+note3)/3.0f;
+		assertEquals(medie,student.calculeazaMedie(),0.01);
+	}
+	
+	@Test
+	public void testCalculeazaMedieONota() {
+		Student student=new Student();
+		int note1=10;
+		student.adaugaNota(note1);
+		assertEquals(note1,student.calculeazaMedie(),0.01);
+	}
+	
+	@Test (expected=IllegalArgumentException.class)
+	public void testCalculeazaMedieZeroNote() {
+		Student student=new Student();
+		student.calculeazaMedie();
+	}
+	
+	
+	@Test
+	public void testAreRestanta() {
+		Student student=new Student();
+		int note1=2;
+		int note2=4;
+		int note3=7;
+		student.adaugaNota(note1);
+		student.adaugaNota(note2);
+		student.adaugaNota(note3);
+
+		assertTrue(student.areRestante());
+	}
+	
+	@Test
+	public void testGetPozitieIncorecta() {
+		Student student=new Student();
+		
+		int note1=2;
+		int note2=4;
+		int note3=7;
+		student.adaugaNota(note1);
+		student.adaugaNota(note2);
+		student.adaugaNota(note3);
+		//1
+		try {
+			//2
+			student.getNota(3);
+			//3
+			fail("metoda arunca exceptie");
+		} catch (IndexOutOfBoundsException e) {
+		//4
+			
+		}
+		//5
 	}
 	
 	}
