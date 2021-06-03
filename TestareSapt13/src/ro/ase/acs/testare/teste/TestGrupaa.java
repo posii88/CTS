@@ -3,7 +3,9 @@ package ro.ase.acs.testare.teste;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+import ro.ase.acs.testare.categorii.GetPromovabilitateCategory;
 import ro.ase.acs.testare.clase.Grupa;
 import ro.ase.acs.testare.clase.Student;
 
@@ -16,12 +18,14 @@ public class TestGrupaa {
 	}
 
 	@Test
+	@Category(GetPromovabilitateCategory.class)
 	public void testConstructorLimitaInferioara() {
 		Grupa grupa=new Grupa(1000);
 		assertEquals(1000, grupa.getNrGrupa());
 	}
 
 	@Test
+	@Category(GetPromovabilitateCategory.class)
 	public void testConstructorLimitaSuperioara() {
 		Grupa grupa=new Grupa(1100);
 		assertEquals(1100, grupa.getNrGrupa());
@@ -56,6 +60,7 @@ public class TestGrupaa {
 
 
 	@Test
+	@Category(GetPromovabilitateCategory.class)
 	public void testPromovabilitateRight() {
 		Grupa grupa=new Grupa(1084);
 		for(int i=0;i<3;i++) {
@@ -74,6 +79,7 @@ public class TestGrupaa {
 	}
 
 	@Test
+	@Category(GetPromovabilitateCategory.class)
 	public void testPromovabilitateLowerBoundary() {
 		Grupa grupa=new Grupa(1084);
 		for(int i=0;i<3;i++) {
@@ -89,6 +95,7 @@ public class TestGrupaa {
 		
 	}
 	@Test
+	@Category(GetPromovabilitateCategory.class)
 	public void testPromovabilitateUpperBoundary() {
 		Grupa grupa=new Grupa(1084);
 		for(int i=0;i<3;i++) {
